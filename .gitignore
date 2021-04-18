@@ -117,3 +117,5 @@ GitHub.sublime-settings
 .history
 
 staticfiles/
+
+.DS_Store
