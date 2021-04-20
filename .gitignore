@@ -119,3 +119,5 @@ GitHub.sublime-settings
 staticfiles/
 
 .DS_Store
+
+.ipynb_checkpoints/
