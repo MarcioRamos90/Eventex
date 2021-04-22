@@ -5,6 +5,7 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.template.loader import render_to_string
 from subscriptions.form import SubscriptionForm
+from subscriptions.models import Subscription
 
 def subscribe(request):
     if request.method == "POST":
@@ -29,6 +30,8 @@ def create(request):
         settings.DEFAULT_FROM_EMAIL,
         form.cleaned_data["email"],
     )
+    
+    Subscription.objects.create(**form.cleaned_data)
 
     messages.success(request, "Inscrição realizada com sucesso!")
     return HttpResponseRedirect("/inscricao/")
